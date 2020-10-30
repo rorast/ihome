@@ -1,12 +1,12 @@
 version: '3'
 services:
-  web:
-    build: ./ihome_python04_day02
-    ports:
-      - "9004:9001"
-    volumes:
-      - .:/code
-    links:
-      - redis
-   redis:
-     image: "redis:alpine"
+web:
+  build: ./ihome_python04_day02
+  ports:
+    - "9004:9001"
+  volumes:
+    - .:/code
+  links:
+    - redis
+redis:
+  image: "redis:alpine"
