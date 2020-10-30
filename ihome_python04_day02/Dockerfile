@@ -6,8 +6,4 @@ ADD . /app
 
 RUN pip install -r requirements.txt
 
-RUN yum -y install redis
-
-RUN service redis start
-
 CMD python manage.py runserver
