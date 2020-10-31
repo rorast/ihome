@@ -12,7 +12,8 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
     # redis
-    REDIS_HOST = "127.0.0.1"
+    # REDIS_HOST = "127.0.0.1"
+    REDIS_HOST = "redis" # Docker Container link
     REDIS_PORT = 6379
 
     # flask-session配置
