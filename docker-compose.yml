@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+
+  flask:
+    build: ./ihome_python04_day02
+    ports:
+      - "9004:9001"
+    volumes:
+      - .:/code
+    links:
+      - redis
+      
+  redis:
+    image: "redis:alpine"
