@@ -10,6 +10,20 @@ services:
       - .:/code
     links:
       - redis
+      - db
+    depends_on:
+      - db
+      - redis
       
   redis:
     image: "redis:alpine"
+
+  db:
+    image: "mariadb:10.5.3"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
